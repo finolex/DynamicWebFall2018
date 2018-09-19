@@ -9,22 +9,52 @@
 	
 	<div id="holder">
 		<img src="img/coat.png">
+		<div id="inbetween"></div>
 		<button class="button" onclick= "showBox()">Purchase for free!</button>
 	</div>
 
 	<div id="box">
 		<h2> Choose your size!</h2>
-		<select>
+		<select id="sizeSelector">
 			<option>Small</option>
 			<option>Medium</option>
 			<option>Large</option>
 		</select>
+		<div id="insertText"></div>
+		<button id="finalPurchase" onclick="showText()">Purchase!</button>
 	</div>
 </body>
 
 <script type="text/javascript">
 	function showBox() {
-		document.getElementById('box').style.display = 'block';
+		document.getElementById('box').style.display = 'flex';
 	}
+
+	var buttonState = 0;
+	function showText(){
+		if (buttonState == 0){
+			var size = document.getElementById('sizeSelector').value;
+			size = size.toLowerCase() + '.txt';
+			console.log(size);
+			
+			fetch(size).then(function(response){
+				response.text().then(function(text){
+					document.getElementById('insertText').textContent = text;
+					console.log(text);
+				})
+			})
+
+
+			document.getElementById('finalPurchase').innerHTML = 'Close';
+			buttonState = 1;
+		} else {
+			//reset the states of all the elements in the popup box
+			document.getElementById('box').style.display = 'none';
+			buttonState = 0;
+			document.getElementById('sizeSelector').value = 'Small';
+			document.getElementById('insertText').innerHTML = '';
+			document.getElementById('finalPurchase').innerHTML = 'Purchase!';
+		};
+	};
 </script>
 </html>

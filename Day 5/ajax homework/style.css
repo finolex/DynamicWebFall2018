@@ -10,16 +10,14 @@ h1 {
 	color: black;
 }
 
-div {
-	padding: 2%;
-	margin-bottom: 5%;
+#holder {
+	display: flex;
+	flex-direction: row;
 }
 
 img {
 	padding-top: 5%;
-	margin-left: 20%;
-	width: 30%;
-	float: left;
+	width: 50%;
 }
 
 button {
@@ -28,13 +26,15 @@ button {
 	padding: 30px;
 	font-size: 30px;
 	color: cornsilk;
-	float: right;
 	margin-top: 17%;
-	margin-right: 30%;
 	box-shadow: 5px 5px #888888;
+	cursor: pointer;
+	display: inline-block;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+	background-color: #3e8e41
+}
 
 .button:active {
   background-color: #3e8e41;
@@ -47,12 +47,15 @@ button {
 	background: aqua;
 	width: 70%;
 	margin: auto;
-	position: relative;
 }
 
 h2{
 	font-size: 40px;
 	text-align: center;
-	position: relative;
-	margin-left: -50px;
+}
+
+select{
+	background-color: fuchsia;
+	border: none;
+	color: cornsilk;
 }

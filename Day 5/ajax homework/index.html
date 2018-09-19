@@ -7,20 +7,24 @@
 <body>
 	<h1>This is a front-end-only AJAX checkout page without any server attached to it</h1>
 	
-	<div>
+	<div id="holder">
 		<img src="img/coat.png">
 		<button class="button" onclick= "showBox()">Purchase for free!</button>
 	</div>
 
 	<div id="box">
 		<h2> Choose your size!</h2>
+		<select>
+			<option>Small</option>
+			<option>Medium</option>
+			<option>Large</option>
+		</select>
 	</div>
 </body>
 
 <script type="text/javascript">
 	function showBox() {
 		document.getElementById('box').style.display = 'block';
-		
 	}
 </script>
 </html>

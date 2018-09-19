@@ -12,13 +12,15 @@
 		<button class="button" onclick= "showBox()">Purchase for free!</button>
 	</div>
 
-	<div class="box"></div>
+	<div id="box">
+		<h2> Choose your size!</h2>
+	</div>
 </body>
 
 <script type="text/javascript">
 	function showBox() {
-		var box = document.getElementById("box");
-		box.removeAttribute('style');
+		document.getElementById('box').style.display = 'block';
+		
 	}
 </script>
 </html>

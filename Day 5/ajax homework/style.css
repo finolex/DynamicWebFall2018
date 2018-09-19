@@ -42,9 +42,17 @@ button {
   transform: translateY(4px);
 }
 
-.box {
+#box {
 	display: none;
-	background: black;
+	background: aqua;
 	width: 70%;
 	margin: auto;
+	position: relative;
+}
+
+h2{
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+	margin-left: -50px;
 }

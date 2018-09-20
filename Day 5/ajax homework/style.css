@@ -16,6 +16,7 @@ h1 {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
 img {
@@ -53,10 +54,12 @@ button {
 	justify-content: flex start;
 	align-items: center;
 	display: none;
-	background: rgba(0,255,255,0.5);
+	background: rgba(0,255,255,0.98);
 	width: 70%;
 	margin: auto;
 	box-shadow: 5px 5px #888888;
+	position: relative;
+	margin-top: -500px;
 }
 
 h2{

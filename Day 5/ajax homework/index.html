@@ -8,7 +8,7 @@
 	<h1>This is a front-end-only AJAX checkout page without any server attached to it</h1>
 	
 	<div id="holder">
-		<img src="img/coat.png">
+		<img src="img/coat.png" alt="a leather coat for sale">
 		<div id="inbetween"></div>
 		<button class="button" onclick= "showBox()">Purchase for free!</button>
 	</div>
@@ -21,9 +21,13 @@
 			<option>Large</option>
 		</select>
 		<div id="insertText"></div>
+		<div id="insertWeather"></div>
 		<button id="finalPurchase" onclick="showText()">Purchase!</button>
 	</div>
 </body>
+
+
+
 
 <script type="text/javascript">
 	function showBox() {
@@ -31,20 +35,37 @@
 	}
 
 	var buttonState = 0;
+
+	function showWeather() {
+		weatherURL = "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=4c339eb32322fef3772fdbde1686ccce";
+
+		setInterval(function(){ 
+			fetch(weatherURL).then(function(response){
+				response.json().then(function(data){
+					temp = Math.round((data.main.temp-273)*100)/100;
+					document.getElementById("insertWeather").innerHTML = "The temperature in NYC right now is " + temp + " celsius."; 
+				})
+			}).catch(function(error) {
+				console.log('Looks like there was a problem: \n', error);
+			});
+		 }, 3000);
+		
+	};
+
 	function showText(){
 		if (buttonState == 0){
 			var size = document.getElementById('sizeSelector').value;
 			size = size.toLowerCase() + '.txt';
-			console.log(size);
 			
 			fetch(size).then(function(response){
 				response.text().then(function(text){
 					document.getElementById('insertText').textContent = text;
-					console.log(text);
 				})
-			})
+			}).catch(function(error) {
+				console.log('Looks like there was a problem: \n', error);
+			});
 
-
+			showWeather();
 			document.getElementById('finalPurchase').innerHTML = 'Close';
 			buttonState = 1;
 		} else {
@@ -54,6 +75,7 @@
 			document.getElementById('sizeSelector').value = 'Small';
 			document.getElementById('insertText').innerHTML = '';
 			document.getElementById('finalPurchase').innerHTML = 'Purchase!';
+			document.getElementById("insertWeather").innerHTML = '';
 		};
 	};
 </script>

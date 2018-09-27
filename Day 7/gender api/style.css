@@ -1,0 +1,75 @@
+body{
+	background-color: cornsilk; 
+}
+
+h1 {
+	margin: auto;
+	padding-top: 1%;
+	width: 40%;
+	text-align: center;
+	color: black;
+}
+
+#holder {
+	height: 550px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+img {
+	width: 400px;
+}
+
+#inbetween{
+	width: 5%;
+}
+
+button {
+	background-color: deepskyblue;
+	border: none;
+	padding: 30px;
+	font-size: 20px;
+	color: cornsilk;
+	box-shadow: 5px 5px #888888;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.button:hover {
+	background-color: #3e8e41
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+h2{
+	font-size: 40px;
+}
+
+select{
+	background-color: fuchsia;
+	border: none;
+	color: cornsilk;
+	font-size: 15px;
+	width: 20%;
+}
+
+section {
+	margin-top: 20px;
+	margin-left: 37.5%;
+}
+
+#insertGender {
+	margin: auto;
+	width: 500px;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 25px;
+}

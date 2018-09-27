@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <h1>Authors</h1>
+  <ul id="authors"></ul>
+
+ <script type="text/javascript">
+
+	const url = 'https://randomuser.me/api/?results=10'; // Get 10 random users
+	const ul = document.getElementById('authors'); // Get the list where we will place our authors
+
+	fetch(url)
+
+	.then((resp) => resp.json())
+
+	.then(function(data){
+		console.log(data.results[1].name.first + ' ' + data.results[1].name.last);
+	})
+
+	.catch(function(err){
+		console.log(err);
+	})
+
+	function createNode (element) {
+		return document.createElement(element);
+	}
+
+	function append(parent, el){
+		return parent.appendChild(el);
+	}
+</script>
+</body>
+</html>
+

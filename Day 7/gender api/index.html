@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is a simple AJAX Checkout Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>This is a simple Gender API (limited user input with drop down menu)</h1>
+	</header>
+	
+	<section id="selection">
+		<select id="name">
+			<option>Andrea</option>
+			<option>George</option>
+			<option>Sam</option>
+			<option>Mary</option>
+			<option>Alex</option>
+		</select>
+		
+		<select id="location">
+			<option>Italy</option>
+			<option>USA</option>
+			<option>Singapore</option>
+			<option>France</option>
+			<option>Spain</option>
+		</select>
+
+	</section>
+
+	<div id="insertGender"></div>
+	<div id="holder">
+		<button class="button" onclick= "showGender()">Purchase for free!</button>
+	</div>
+</body>
+
+
+<script type="text/javascript">
+	function showGender() {
+		let key = "cMNZsRkNlQabSRwBuu";
+		let name = document.getElementById('name').value;
+		let location = document.getElementById('location').value;
+		let location2;
+		let gender;
+
+		if (location == 'Italy'){
+			location2 = 'IT';
+		}
+
+		if (location == 'France'){
+			location2 = 'FR';
+		}
+
+		if (location == 'Singapore'){
+			location2 = 'SG';
+		}
+
+		if (location == 'USA'){
+			location2 = 'US';
+		}
+
+		if (location == 'Spain'){
+			location2 = 'ES';
+		}
+		
+
+		genderURL = "https://gender-api.com/get?name=" + name + "&country=" + location2 + "&key=" + key;
+
+		fetch(genderURL)
+
+		.then(function(response){
+			response.json().then(function(data){
+				gender = data.gender;
+				document.getElementById("insertGender").innerHTML = name + " is usually a " + gender + " name in " + location + '.'; 
+			})
+			
+		})
+		.catch(function(error) {
+			console.log('Looks like there was a problem: \n', error);
+		});
+	};
+</script>
+</html>

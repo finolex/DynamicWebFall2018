@@ -1,0 +1,4 @@
+module.exports = {
+	APIToken : 'xoxp-450967054257-452937744406-451704372660-f9fc0ae9cce4d983e9ee549cd64af73b',
+	botToken: 'xoxb-450967054257-452898630359-GUEqAisCMlgLY7ks9ep4aphi'
+}

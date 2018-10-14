@@ -7,4 +7,5 @@ Instructions for SlackBot!
 5. The bot should automatically respond to you with how many LLs or TTLs the user you requested for, has.
 
 PS: Username is in terms of the email (so for example, when signing up, my email I used was ac5847@nyu.edu, so my username is ac5847)
+<br>
 PPS: For now, the bot only recognises the two terms 'll' and 'ttl', and only in that format (small cased and no spaces). 

@@ -80,6 +80,8 @@ bot.on('message', function(data){
 
             .then(function(data){
                 //create a counter to count the total number of messages the personToQuery has, in the returned JSON object                var counter = 0;
+                var counter = 0;
+
                 for (var i = 0; i < data.messages.matches.length; i++){
                     if(data.messages.matches[i].username == personToQuery){
                         //if personToQuery matches the username in the individual JSON parts, increase counter by 1
